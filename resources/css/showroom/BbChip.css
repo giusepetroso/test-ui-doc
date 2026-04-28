@@ -1,0 +1,39 @@
+.showroom .bb-chip {
+  background-color: #1e1c1a;
+  border-color: #312f2d;
+  border-radius: 4px;
+  color: #d4d1cc;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  padding: 4px 10px;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.showroom .bb-chip:has(:focus-visible) {
+  background-color: rgba(212, 255, 77, 0.08);
+  border-color: rgba(212, 255, 77, 0.4);
+  color: #d4ff4d;
+}
+
+.showroom .bb-chip:hover {
+  border-color: #504d4a;
+}
+
+.showroom .bb-chip__content {
+  font-size: 12px;
+  line-height: 1;
+}
+
+.showroom .bb-chip__clear-button svg {
+  background-color: #312f2d;
+  border-radius: 3px;
+  padding: 2px;
+  width: 14px;
+  color: #9e9a95;
+  transition: background 0.15s, color 0.15s;
+}
+
+.showroom .bb-chip__clear-button:hover svg {
+  background-color: rgba(212, 255, 77, 0.15);
+  color: #d4ff4d;
+}

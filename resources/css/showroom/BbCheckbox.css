@@ -1,0 +1,36 @@
+.showroom .bb-checkbox .bb-base-input-container__label-text,
+.showroom .bb-radio .bb-base-input-container__label-text {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  color: #d4d1cc;
+  letter-spacing: 0.02em;
+}
+
+.showroom .bb-base-checkbox {
+  --bb-checkbox-w: 18px;
+  border-color: #3d3b39;
+  background-color: #1e1c1a;
+  border-radius: 4px;
+  transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
+}
+
+.showroom .bb-base-checkbox:checked,
+.showroom .bb-base-checkbox--checked {
+  border-color: #d4ff4d;
+  background-color: #d4ff4d;
+}
+
+.showroom .bb-base-checkbox:checked + .bb-base-checkbox__icon,
+.showroom .bb-base-checkbox__icon {
+  color: #0a0908;
+}
+
+.showroom .bb-base-checkbox:focus-visible {
+  box-shadow: 0 0 0 3px rgba(212, 255, 77, 0.2);
+  border-color: #d4ff4d;
+}
+
+.showroom .bb-base-checkbox--indeterminate {
+  background-color: rgba(212, 255, 77, 0.3);
+  border-color: #d4ff4d;
+}

@@ -1,0 +1,25 @@
+.showroom .bb-radio .bb-base-input-container__label-text {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  color: #d4d1cc;
+  letter-spacing: 0.02em;
+}
+
+.showroom .bb-base-radio {
+  border-color: #3d3b39;
+  background-color: #1e1c1a;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.showroom .bb-base-radio:checked {
+  border-color: #d4ff4d;
+  background-color: #d4ff4d;
+}
+
+.showroom .bb-base-radio:focus-visible {
+  box-shadow: 0 0 0 3px rgba(212, 255, 77, 0.2);
+}
+
+.showroom .bb-base-radio__dot {
+  background-color: #0a0908;
+}

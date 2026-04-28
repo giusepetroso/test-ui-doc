@@ -1,0 +1,22 @@
+.showroom .bb-avatar {
+  background-color: #2e2c2a;
+  outline: 2px solid #312f2d;
+  outline-offset: 2px;
+}
+
+.showroom .bb-avatar .bb-avatar__fallback {
+  background-color: rgba(212, 255, 77, 0.1);
+  color: #d4ff4d;
+  font-family: 'DM Mono', monospace;
+  font-weight: 500;
+  font-size: 0.4em;
+  letter-spacing: 0.05em;
+}
+
+.showroom .bb-avatar--accent {
+  outline-color: rgba(212, 255, 77, 0.4);
+}
+
+.showroom .bb-avatar--accent .bb-avatar__fallback {
+  background-color: rgba(212, 255, 77, 0.15);
+}

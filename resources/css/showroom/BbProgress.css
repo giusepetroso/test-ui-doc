@@ -1,0 +1,23 @@
+.showroom .bb-progress {
+  --bb-progress-track: 8px;
+  background-color: #222120;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.showroom .bb-progress .bb-progress-bar {
+  background: linear-gradient(90deg, #d4ff4d 0%, #e8ff8a 100%);
+  border-radius: 4px;
+  box-shadow: 0 0 12px rgba(212, 255, 77, 0.4);
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.showroom .bb-progress.bb-progress--danger .bb-progress-bar {
+  background: linear-gradient(90deg, #ff6e6e 0%, #ff9898 100%);
+  box-shadow: 0 0 12px rgba(255, 110, 110, 0.4);
+}
+
+.showroom .bb-progress.bb-progress--subtle .bb-progress-bar {
+  background: #3d3b39;
+  box-shadow: none;
+}

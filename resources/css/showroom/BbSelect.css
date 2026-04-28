@@ -1,0 +1,47 @@
+.showroom .bb-select .bb-base-select__inner-container,
+.showroom .bb-base-select {
+  background-color: #1e1c1a;
+  border-color: #312f2d;
+  border-radius: 6px;
+  color: #f4f1ef;
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+}
+
+/* Options dropdown */
+.showroom .bb-base-select__options {
+  background-color: #1e1c1a;
+  border: 1px solid #312f2d;
+  border-radius: 6px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+}
+
+.showroom .bb-flat-list-box__option {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  color: #d4d1cc;
+}
+
+.showroom .bb-flat-list-box__option--focused,
+.showroom .bb-flat-list-box__option:hover {
+  background-color: rgba(212, 255, 77, 0.08);
+  color: #d4ff4d;
+}
+
+.showroom .bb-flat-list-box__option--selected {
+  background-color: rgba(212, 255, 77, 0.12);
+  color: #d4ff4d;
+}
+
+.showroom .bb-base-select__chips-box {
+  gap: 4px;
+}
+
+/* Chevron */
+.showroom .bb-base-select__chevron {
+  color: #6a6662;
+}
+
+.showroom .bb-base-select--shown .bb-base-select__chevron {
+  color: #d4ff4d;
+}

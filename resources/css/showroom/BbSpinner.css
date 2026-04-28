@@ -1,0 +1,11 @@
+.showroom .bb-spinner {
+  color: #d4ff4d;
+}
+
+.showroom .bb-spinner--muted {
+  color: #504d4a;
+}
+
+.showroom .bb-spinner--danger {
+  color: #ff6e6e;
+}

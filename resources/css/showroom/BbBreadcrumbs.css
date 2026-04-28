@@ -1,0 +1,41 @@
+.showroom .bb-breadcrumbs {
+  font-family: 'DM Mono', monospace;
+}
+
+.showroom .bb-breadcrumbs__list {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.showroom .bb-breadcrumbs__item {
+  display: flex;
+  align-items: center;
+}
+
+.showroom .bb-breadcrumbs__breadcrumb {
+  font-size: 12px;
+  color: #6a6662;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.15s;
+}
+
+.showroom .bb-breadcrumbs__breadcrumb:hover {
+  color: #d4ff4d;
+}
+
+.showroom .bb-breadcrumbs__breadcrumb--current {
+  color: #d4d1cc;
+  pointer-events: none;
+}
+
+.showroom .bb-breadcrumbs__divider {
+  color: #3d3b39;
+  font-size: 12px;
+  margin: 0 8px;
+}

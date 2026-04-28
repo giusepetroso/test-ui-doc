@@ -1,0 +1,27 @@
+.showroom .bb-badge__content-container {
+  --color: #d4ff4d;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: #0a0908;
+  background-color: var(--color);
+  min-height: 20px;
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+
+.showroom .bb-badge--danger .bb-badge__content-container {
+  --color: #ff6e6e;
+  color: #0a0908;
+}
+
+.showroom .bb-badge--info .bb-badge__content-container {
+  --color: #60a5fa;
+  color: #0a0908;
+}
+
+.showroom .bb-badge--muted .bb-badge__content-container {
+  background-color: #2e2c2a;
+  color: #9e9a95;
+}

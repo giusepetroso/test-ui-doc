@@ -1,0 +1,59 @@
+.showroom .bb-text-input .bb-base-input-container__label,
+.showroom .bb-textarea .bb-base-input-container__label,
+.showroom .bb-number-input .bb-base-input-container__label,
+.showroom .bb-select .bb-base-input-container__label {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: #8c8880;
+  font-weight: 400;
+}
+
+.showroom .bb-base-input-outer-container--errors .bb-base-input-container__label {
+  color: #ff6e6e;
+}
+
+.showroom .bb-base-input-container__hint {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: #6a6662;
+}
+
+.showroom .bb-base-input-container__error {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: #ff6e6e;
+}
+
+/* Common input inner container */
+.showroom .bb-common-input-inner-container {
+  background-color: #1e1c1a;
+  border-color: #312f2d;
+  border-radius: 6px;
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.showroom .bb-common-input-inner-container:has(input:focus),
+.showroom .bb-common-input-inner-container:has(textarea:focus),
+.showroom .bb-common-input-inner-container--focused {
+  border-color: rgba(212, 255, 77, 0.5);
+  box-shadow: 0 0 0 3px rgba(212, 255, 77, 0.08);
+}
+
+.showroom .bb-common-input-inner-container--errors {
+  border-color: rgba(255, 110, 110, 0.4);
+}
+
+.showroom .bb-base-text-input__input,
+.showroom .bb-base-textarea__input {
+  color: #f4f1ef;
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+}
+
+.showroom .bb-base-text-input__input::placeholder,
+.showroom .bb-base-textarea__input::placeholder {
+  color: #504d4a;
+}

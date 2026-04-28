@@ -1,0 +1,33 @@
+.showroom .bb-pagination .bb-pagination__page {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  color: #6a6662;
+  border-color: #2e2c2a;
+  border-radius: 4px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.showroom .bb-pagination .bb-pagination__page:not(.bb-pagination__page--active):not(:disabled):hover {
+  background-color: rgba(212, 255, 77, 0.08);
+  color: #d4ff4d;
+  --text-color: #d4ff4d;
+}
+
+.showroom .bb-pagination .bb-pagination__page--active {
+  background-color: #d4ff4d;
+  border-color: #d4ff4d;
+  color: #0a0908;
+}
+
+.showroom .bb-pagination .bb-pagination__page:focus-visible {
+  background-color: #d4ff4d;
+  color: #0a0908;
+}
+
+.showroom .bb-pagination .bb-pagination__page:disabled {
+  opacity: 0.25;
+}
+
+.showroom .bb-pagination .bb-pagination__page-chevron {
+  color: currentColor;
+}

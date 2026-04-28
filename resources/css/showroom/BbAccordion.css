@@ -1,0 +1,57 @@
+.showroom .bb-accordion {
+  border: 1px solid #2e2c2a;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #161412;
+}
+
+.showroom .bb-accordion + .bb-accordion {
+  margin-top: 8px;
+}
+
+.showroom .bb-accordion .bb-accordion__header {
+  background: #1e1c1a;
+  padding: 16px 20px;
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  color: #f4f1ef;
+  border-radius: 0;
+  transition: background 0.15s;
+}
+
+.showroom .bb-accordion .bb-accordion__header:hover {
+  background: #252220;
+}
+
+.showroom .bb-accordion .bb-accordion__content {
+  padding: 20px;
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  color: #9e9a95;
+  line-height: 1.7;
+  border-top: 1px solid #2e2c2a;
+}
+
+.showroom .bb-accordion--open .bb-accordion__header {
+  color: #d4ff4d;
+}
+
+/* Accordion header row for showing chevron */
+.showroom .accordion-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.showroom .accordion-chevron {
+  width: 16px;
+  height: 16px;
+  color: #6a6662;
+  transition: transform 0.25s, color 0.15s;
+}
+
+.showroom .bb-accordion--open .accordion-chevron {
+  transform: rotate(180deg);
+  color: #d4ff4d;
+}

@@ -1,0 +1,31 @@
+.showroom .bb-slider .bb-base-input-container__label-text,
+.showroom .bb-rating .bb-base-input-container__label-text {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: #8c8880;
+  letter-spacing: 0.08em;
+}
+
+.showroom .bb-base-rating {
+  gap: 4px;
+}
+
+.showroom .bb-base-rating__item {
+  color: #312f2d;
+  transition: color 0.15s, transform 0.1s;
+  cursor: pointer;
+}
+
+.showroom .bb-base-rating__item--active,
+.showroom .bb-base-rating__item--hovered {
+  color: #d4ff4d;
+}
+
+.showroom .bb-base-rating__item:hover {
+  transform: scale(1.15);
+  color: #d4ff4d;
+}
+
+.showroom .bb-base-rating__item--active {
+  filter: drop-shadow(0 0 4px rgba(212, 255, 77, 0.5));
+}

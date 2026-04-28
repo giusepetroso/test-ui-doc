@@ -1,0 +1,35 @@
+.showroom .bb-switch .bb-base-input-container__label-text {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  color: #d4d1cc;
+  letter-spacing: 0.02em;
+}
+
+.showroom .bb-base-switch {
+  --bb-switch-h: 22px;
+  --bb-switch-w: 40px;
+  --bb-switch-thumb: 18px;
+  --bb-switch-margin: 2px;
+  background-color: #312f2d;
+  border-radius: 999px;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.showroom .bb-base-switch--checked {
+  background-color: #d4ff4d;
+}
+
+.showroom .bb-base-switch:focus-visible {
+  box-shadow: 0 0 0 3px rgba(212, 255, 77, 0.2);
+}
+
+.showroom .bb-base-switch__thumb {
+  background-color: #1e1c1a;
+  border-radius: 999px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.showroom .bb-base-switch--checked .bb-base-switch__thumb {
+  background-color: #0a0908;
+}

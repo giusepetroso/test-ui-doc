@@ -1,0 +1,38 @@
+.showroom .bb-slider .bb-base-input-container__label-text {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: #8c8880;
+  letter-spacing: 0.08em;
+}
+
+.showroom .bb-base-slider__track {
+  background-color: #2e2c2a;
+  border-radius: 999px;
+  height: 6px;
+}
+
+.showroom .bb-base-slider__fill {
+  background: linear-gradient(90deg, #d4ff4d 0%, #e8ff8a 100%);
+  border-radius: 999px;
+  box-shadow: 0 0 10px rgba(212, 255, 77, 0.3);
+}
+
+.showroom .bb-base-slider__thumb {
+  background-color: #d4ff4d;
+  border: 2px solid #0a0908;
+  border-radius: 999px;
+  width: 18px;
+  height: 18px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.showroom .bb-base-slider__thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 4px rgba(212, 255, 77, 0.2);
+}
+
+.showroom .bb-base-slider__thumb:focus-visible {
+  box-shadow: 0 0 0 4px rgba(212, 255, 77, 0.3);
+  outline: none;
+}

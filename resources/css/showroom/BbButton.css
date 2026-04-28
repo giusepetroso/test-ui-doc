@@ -1,0 +1,52 @@
+.showroom .bb-button {
+  --color: #d4ff4d;
+  --text-color: #0a0908;
+  letter-spacing: 0.01em;
+  font-family: 'DM Mono', monospace;
+  font-size: 13px !important;
+  transition:
+    background-color 0.15s,
+    box-shadow 0.15s,
+    transform 0.1s;
+}
+
+.showroom .bb-button:hover:not(.base-btn--disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(212, 255, 77, 0.2);
+}
+
+.showroom .bb-button:active:not(.base-btn--disabled) {
+  transform: translateY(0);
+}
+
+.showroom .bb-button.base-btn--disabled:not(.bb-button--loading) {
+  opacity: 0.35;
+}
+
+/* Secondary/ghost variant via custom class */
+.showroom .bb-button--outline {
+  --color: transparent;
+  --text-color: #d4ff4d;
+  --border-color: #d4ff4d;
+  border: 1px solid #d4ff4d;
+  background-color: transparent;
+}
+
+.showroom .bb-button--ghost {
+  --color: rgba(212, 255, 77, 0.08);
+  --text-color: #f4f1ef;
+  --border-color: #312f2d;
+}
+
+.showroom .bb-button--ghost:hover:not(.base-btn--disabled) {
+  --color: rgba(212, 255, 77, 0.15);
+}
+
+.showroom .bb-button--danger {
+  --color: #ff6e6e;
+  --text-color: #0a0908;
+}
+
+.showroom .bb-button-group-demo {
+  display: inline-flex;
+}

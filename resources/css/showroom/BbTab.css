@@ -1,0 +1,51 @@
+.showroom .bb-tab {
+  color: #f4f1ef;
+}
+
+.showroom .bb-tab .bb-tab__label-boundary::before {
+  background-color: #2e2c2a;
+}
+
+.showroom .bb-tab .bb-tab__label-container {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.showroom .bb-tab .bb-tab__label-container::before {
+  background-color: #d4ff4d;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.showroom .bb-tab .bb-tab__btn {
+  color: #6a6662;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  transition: color 0.15s;
+}
+
+.showroom .bb-tab .bb-tab__btn:hover:not(.base-btn--disabled) {
+  color: #d4d1cc;
+  background: transparent;
+}
+
+.showroom .bb-tab .bb-tab__btn--active {
+  color: #d4ff4d;
+}
+
+.showroom .bb-tab__label {
+  padding: 6px 0;
+}
+
+.showroom .bb-tab .bb-tab__panes-container {
+  padding-top: 24px;
+}
+
+.showroom .bb-tab__pane-content {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  color: #9e9a95;
+  line-height: 1.7;
+}
