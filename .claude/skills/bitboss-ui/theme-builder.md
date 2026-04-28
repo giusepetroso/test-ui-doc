@@ -134,3 +134,14 @@ Add all generated files to the main CSS entry point (typically `resources/css/ap
 - [ ] `layout.css` generated
 - [ ] Component CSS files generated under `resources/css/components/`
 - [ ] All files imported in the main CSS entry point
+
+---
+
+## Step 6 — Showroom (Optional)
+
+After confirming all checklist items are complete, ask the user:
+
+> "Would you like to generate a component showroom page to preview your theme in action?"
+
+- If **yes**: load the sub-skill `bitboss-ui/showroom` and follow its instructions.
+- If **no**: thank the user and close the theme-builder flow.
