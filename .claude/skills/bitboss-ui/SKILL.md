@@ -5,6 +5,14 @@ description: "Apply this skill when creating or editing frontend code in .vue fi
 
 # bitboss-ui
 
+## Sub-skills
+
+| Sub-skill | File | When to load |
+|-----------|------|--------------|
+| theme-builder | [theme-builder.md](./theme-builder.md) | Only when the user explicitly asks to initialize or create a new theme |
+
+---
+
 ## When to Apply
 
 Load this skill **only when creating or modifying frontend code inside `.vue` files**.
