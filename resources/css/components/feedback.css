@@ -1,0 +1,86 @@
+@import '../tokens.css';
+
+/* ── BbAlert ──────────────────────────────────────────────── */
+
+.bb-alert {
+    border-radius: var(--bb-radius);
+    border-left-width: 3px;
+    font-size: 13px;
+    padding: 10px 12px;
+}
+
+.bb-alert--info {
+    background-color: var(--color-info-bg);
+    border-color: var(--color-info);
+    color: var(--color-info);
+}
+
+.bb-alert--success {
+    background-color: var(--color-success-bg);
+    border-color: var(--color-success);
+    color: var(--color-success);
+}
+
+.bb-alert--warning {
+    background-color: var(--color-warning-bg);
+    border-color: var(--color-warning);
+    color: var(--color-warning);
+}
+
+.bb-alert--error {
+    background-color: var(--color-error-bg);
+    border-color: var(--color-error);
+    color: var(--color-error);
+}
+
+/* ── BbBadge ──────────────────────────────────────────────── */
+
+.bb-badge {
+    font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 9999px;
+    letter-spacing: 0.02em;
+}
+
+/* ── BbChip ───────────────────────────────────────────────── */
+
+.bb-chip {
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 9999px;
+    border-color: var(--color-border);
+    background-color: var(--color-primary-muted);
+    color: var(--color-primary);
+    transition: background-color 120ms;
+
+    &:hover {
+        background-color: color-mix(in srgb, var(--color-primary-muted) 70%, var(--color-border));
+    }
+}
+
+/* ── BbToast ──────────────────────────────────────────────── */
+
+.bb-toast {
+    border-radius: var(--bb-radius);
+    font-size: 13px;
+    font-weight: 500;
+    font-family: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+    box-shadow: 0 8px 24px color-mix(in srgb, var(--color-text) 12%, transparent);
+    border: 1px solid var(--color-border);
+}
+
+/* ── BbProgress ───────────────────────────────────────────── */
+
+.bb-progress {
+    border-radius: 9999px;
+    height: 6px;
+    background-color: var(--color-primary-muted);
+    overflow: hidden;
+}
+
+.bb-progress__bar {
+    background-color: var(--color-primary);
+    border-radius: 9999px;
+    transition: width 300ms ease;
+}

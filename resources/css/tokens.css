@@ -1,0 +1,79 @@
+:root,
+.light {
+    /* ── Primary ─────────────────────────────────────────── */
+    --bb-primary-base: #1e6b3d;
+    --bb-primary: var(--bb-primary-base);
+    --bb-primary-dark: #5cb88a;
+    --bb-contrasting: #ffffff;
+    --bb-contrasting-dark: #000000;
+    --bb-danger: #c8302a;
+
+    /* ── Surface ─────────────────────────────────────────── */
+    --bb-panel-light: #ffffff;
+    --bb-panel-dark: #1a2620;
+    --bb-panel: var(--bb-panel-light);
+    --bb-panel-disabled-light: #eef4f0;
+    --bb-panel-disabled-dark: #2d3d34;
+    --bb-panel-disabled: var(--bb-panel-disabled-light);
+
+    /* ── Border ──────────────────────────────────────────── */
+    --bb-border-light: #c5d9cc;
+    --bb-border-dark: #3d5546;
+    --bb-border: var(--bb-border-light);
+
+    /* ── Text ────────────────────────────────────────────── */
+    --bb-text-light: #1a2620;
+    --bb-text-dark: #e8f2ec;
+    --bb-text: var(--bb-text-light);
+
+    /* ── Shape ───────────────────────────────────────────── */
+    --bb-radius: 8px;
+
+    /* ── Focus ring ──────────────────────────────────────── */
+    --bb-ring-opacity: 0.25;
+    --bb-ring-size: 3px;
+
+    /* ── Compact inputs ──────────────────────────────────── */
+    --bb-input-h: 32px;
+    --bb-input-compact-h: 26px;
+    --bb-input-py: 3px;
+    --bb-input-compact-py: 1px;
+    --bb-input-px: 8px;
+    --bb-input-compact-px: 6px;
+    --bb-input-spacing: 6px;
+    --bb-label-spacing-y: 4px;
+    --bb-label-compact-spacing-y: 3px;
+    --bb-label-spacing-x: 8px;
+    --bb-label-size: 13px;
+    --bb-label-weight: 500;
+    --bb-input-font-size: 14px;
+
+    /* ── Icon & hint ─────────────────────────────────────── */
+    --bb-input-color: #1a2620;
+    --bb-input-color-dark: #e8f2ec;
+    --bb-icon-color: #52685c;
+    --bb-icon-color-dark: #8aaa94;
+    --bb-hint: #52685c;
+    --bb-hint-dark: #8aaa94;
+
+    /* ── Custom semantic tokens ──────────────────────────── */
+    --color-primary: #1e6b3d;
+    --color-primary-light: #3baa6e;
+    --color-primary-muted: #eef4f0;
+    --color-surface: #f8faf8;
+    --color-surface-raised: #ffffff;
+    --color-border: #c5d9cc;
+    --color-text: #1a2620;
+    --color-text-muted: #52685c;
+    --color-success: #1e6b3d;
+    --color-success-bg: #eef6f1;
+    --color-warning: #b45309;
+    --color-warning-bg: #fef3c7;
+    --color-error: #c8302a;
+    --color-error-bg: #fef0ef;
+    --color-info: #1d4ed8;
+    --color-info-bg: #eff6ff;
+
+    /* ── Spacing unit ────────────────────────────────────── */
+    --spacing-unit: 4px;
+}

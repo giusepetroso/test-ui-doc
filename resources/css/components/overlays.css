@@ -1,0 +1,96 @@
+@import '../tokens.css';
+
+/* ── BbDialog ─────────────────────────────────────────────── */
+
+.bb-dialog {
+    border-radius: calc(var(--bb-radius) + 4px);
+    box-shadow:
+        0 0 0 1px var(--color-border),
+        0 16px 48px color-mix(in srgb, var(--color-text) 14%, transparent);
+    border: none;
+    overflow: hidden;
+}
+
+.bb-dialog__header {
+    font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    border-bottom: 1px solid var(--color-border);
+    padding: 14px 18px;
+    color: var(--color-text);
+}
+
+.bb-dialog__body {
+    padding: 16px 18px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+}
+
+.bb-dialog__footer {
+    border-top: 1px solid var(--color-border);
+    padding: 12px 18px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    background-color: var(--color-primary-muted);
+}
+
+/* ── BbDropdown ───────────────────────────────────────────── */
+
+.bb-dropdown__content,
+.bb-common-popover {
+    border: 1px solid var(--color-border);
+    border-radius: var(--bb-radius);
+    box-shadow: 0 4px 20px color-mix(in srgb, var(--color-text) 10%, transparent);
+    background-color: var(--color-surface-raised);
+    overflow: hidden;
+}
+
+.bb-dropdown__item {
+    font-size: 13px;
+    padding: 7px 12px;
+    color: var(--color-text);
+    cursor: pointer;
+    transition: background-color 100ms;
+
+    &:hover {
+        background-color: var(--color-primary-muted);
+        color: var(--color-primary);
+    }
+
+    &--danger {
+        color: var(--color-error);
+
+        &:hover {
+            background-color: var(--color-error-bg);
+        }
+    }
+}
+
+/* ── BbPopover ────────────────────────────────────────────── */
+
+.bb-popover {
+    border: 1px solid var(--color-border);
+    border-radius: var(--bb-radius);
+    box-shadow: 0 4px 20px color-mix(in srgb, var(--color-text) 10%, transparent);
+    font-size: 13px;
+    padding: 10px 14px;
+    background-color: var(--color-surface-raised);
+    color: var(--color-text);
+    max-width: 280px;
+    line-height: 1.5;
+}
+
+/* ── BbTooltip ────────────────────────────────────────────── */
+
+.bb-tooltip {
+    background-color: var(--color-text);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 9px;
+    border-radius: 6px;
+    letter-spacing: 0.01em;
+    box-shadow: 0 2px 8px color-mix(in srgb, var(--color-text) 20%, transparent);
+}

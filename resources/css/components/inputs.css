@@ -1,0 +1,80 @@
+@import '../tokens.css';
+
+/* ── Common input inner container ─────────────────────────── */
+
+.bb-common-input-inner-container {
+    border-color: var(--color-border);
+    border-radius: var(--bb-radius);
+    background-color: var(--color-surface-raised);
+    transition: border-color 120ms, box-shadow 120ms;
+
+    &:focus-within {
+        border-color: var(--color-primary);
+        box-shadow: 0 0 0 var(--bb-ring-size)
+            color-mix(in srgb, var(--bb-primary) calc(var(--bb-ring-opacity) * 100%), transparent);
+    }
+}
+
+/* ── Error state ──────────────────────────────────────────── */
+
+.bb-base-input-outer-container--errors .bb-common-input-inner-container {
+    border-color: var(--color-error);
+    background-color: var(--color-error-bg);
+}
+
+/* ── Disabled state ───────────────────────────────────────── */
+
+.bb-base-text-input--disabled .bb-common-input-inner-container,
+.bb-select--disabled .bb-common-input-inner-container,
+.bb-textarea--disabled .bb-common-input-inner-container,
+.bb-number-input--disabled .bb-common-input-inner-container {
+    background-color: var(--color-primary-muted);
+    border-color: var(--color-border);
+    opacity: 0.65;
+}
+
+/* ── Hint / error text ────────────────────────────────────── */
+
+.bb-base-input-container__hint {
+    font-size: 12px;
+    color: var(--color-text-muted);
+}
+
+.bb-base-input-container__error {
+    font-size: 12px;
+    color: var(--color-error);
+}
+
+/* ── Select popover ───────────────────────────────────────── */
+
+.bb-select__popover-content,
+.bb-select-popover__content {
+    border-color: var(--color-border);
+    border-radius: var(--bb-radius);
+    box-shadow: 0 4px 16px color-mix(in srgb, var(--color-text) 8%, transparent);
+}
+
+/* ── Checkbox & radio ─────────────────────────────────────── */
+
+.bb-checkbox__indicator,
+.bb-radio__indicator {
+    border-color: var(--color-border);
+    border-radius: 4px;
+}
+
+.bb-checkbox--checked .bb-checkbox__indicator,
+.bb-radio--checked .bb-radio__indicator {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+/* ── Switch ───────────────────────────────────────────────── */
+
+.bb-switch__track {
+    background-color: var(--color-border);
+    border-radius: 9999px;
+}
+
+.bb-switch--checked .bb-switch__track {
+    background-color: var(--color-primary);
+}
