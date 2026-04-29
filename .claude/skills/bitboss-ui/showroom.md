@@ -70,6 +70,53 @@ Structure the showroom as a single scrollable page with a sticky sidebar for sec
 └──────────────┴───────────────────────────────────────┘
 ```
 
+### ⚠️ CRITICAL — Grid Container Rules
+
+**Every component rendered at the root of the grid container becomes a grid item and consumes a column.** This is a known layout trap.
+
+You MUST follow these rules or the sidebar will appear in the wrong column and take up the wrong width:
+
+1. **The grid container `<div class="showroom">` must have EXACTLY two direct children**: `<aside>` (sidebar) and `<main>` (content). Nothing else.
+2. **`BbToast`, `BbDialog`, `BbConfirm`, and any other overlay components must live OUTSIDE the grid `<div>`**. Use Vue 3 fragment syntax (multiple root elements) to place them as siblings of the grid div.
+3. **Never place `BbToast` or modal components inside the grid**, even if they are `position: fixed`. CSS Grid places them in the flow first, stealing the first column from the sidebar.
+
+Correct template structure:
+```vue
+<template>
+  <!-- Overlays: siblings of the grid, NOT children -->
+  <BbToast placement="top-end" />
+
+  <div class="showroom">  <!-- grid container: exactly 2 children -->
+    <aside class="showroom__sidebar">...</aside>
+    <main class="showroom__main">...</main>
+  </div>
+
+  <!-- Dialogs also outside the grid -->
+  <BbDialog v-model="isDialogOpen" ...>...</BbDialog>
+</template>
+```
+
+**Wrong** (breaks layout — BbToast steals the first grid column):
+```vue
+<template>
+  <div class="showroom">
+    <BbToast />              <!-- ← grid item #1: takes 200px column -->
+    <aside>...</aside>       <!-- ← grid item #2: takes 1fr — FULL WIDTH -->
+    <main>...</main>         <!-- ← grid item #3: wraps to new row -->
+  </div>
+</template>
+```
+
+### CSS for the grid
+
+```css
+.showroom {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    min-height: 100vh;
+}
+```
+
 ### Sidebar
 
 - Render section names as small pills (e.g. `<span class="pill">Typography</span>`).
@@ -132,7 +179,7 @@ Components to include:
 | `BbNumberInput` | Show min/max/step constraints. |
 | `BbCheckbox` | Checked and unchecked. |
 | `BbRadioGroup` | Group of 3 options. |
-| `BbToggle` (if available) | Bound boolean. |
+| `BbSwitch` (if available) | Bound boolean. |
 
 For each input, also render one instance with `disabled` and one with a validation error state (use the component's error/invalid prop).
 
@@ -143,10 +190,10 @@ For each input, also render one instance with `disabled` and one with a validati
 | Component | What to show |
 |-----------|-------------|
 | `BbAlert` | All severity variants: `info`, `success`, `warning`, `error`. Each dismissible. Wire the dismiss event to actually remove the alert from the DOM using `v-if`. |
-| `BbBadge` | All color/size variants. |
-| `BbChip` | Default and removable variant. Wire the remove event. |
-| `BbToast` / toast system | A "Trigger toast" button that fires each severity variant. |
-| `BbProgress` | Determinate (bind a reactive 0–100 value with a slider or auto-increment) and indeterminate. |
+| `BbBadge` | All color/size variants. Use `content` prop (not `text`) and `color` prop (not `theme`). |
+| `BbChip` | Default and removable variant. Use `clearable` prop and wire `@click:clear`. |
+| `BbToast` | Mount `<BbToast>` **outside the grid container** (see Step 3). Trigger toasts via `useToast().toast(...)` — the method is `toast()`, not `notify()`. |
+| `BbProgress` | Use `v-model` with a reactive number. `min` and `max` props control the range. |
 
 ---
 
@@ -155,9 +202,9 @@ For each input, also render one instance with `disabled` and one with a validati
 | Component | What to show |
 |-----------|-------------|
 | `BbTab` | A tab group with 3 tabs. Wire active tab state so switching actually changes the visible panel content. |
-| `BbAccordion` | 3 items, first one open by default. Wire open/close state. |
-| `BbBreadcrumbs` | A realistic 3-level path. |
-| `BbPagination` | Bind a reactive `currentPage` value. Wire prev/next and page click. Display current page number. |
+| `BbAccordion` | `BbAccordion` is a **single collapsible panel** with `v-model` (boolean) and `#header` / `#default` slots — it does NOT accept an `items` array. Render 3 separate `BbAccordion` components. |
+| `BbBreadcrumbs` | Items must have `key` (string or number) and `text` props. Use `href` for plain links (not `label`). |
+| `BbPagination` | Prop is `total-pages` (not `total` or `per-page`). Wire `v-model` (number) and display current page. |
 
 ---
 
@@ -165,12 +212,14 @@ For each input, also render one instance with `disabled` and one with a validati
 
 All overlay components must be **fully interactive** — they must open and close.
 
+`BbDialog` must be placed **outside the grid container** (see Step 3).
+
 | Component | What to show |
 |-----------|-------------|
 | `BbDialog` | A "Open dialog" button that opens a dialog with a title, body text, confirm button, and cancel button. Wire confirm and cancel to close the dialog. |
-| `BbDropdown` | A trigger button that opens a dropdown with at least 3 items. Wire item click to log or show a result. |
+| `BbDropdown` | A trigger button that opens a dropdown with at least 3 items. Wire item click to log or show a result. `items` array requires `key` and `text` fields. |
 | `BbPopover` | A trigger element with a popover containing a short description. |
-| `BbTooltip` | Wrap a button or icon with a tooltip. |
+| `BbTooltip` | Wrap a button or icon with a tooltip using the `tooltip` prop on `BbButton`. |
 
 ---
 
@@ -206,10 +255,38 @@ When implementing interactive behavior, follow these rules:
 
 ---
 
-## Step 7 — Verify
+## Step 7 — Pre-flight Checklist
+
+Before running the build, mentally verify each item:
+
+### Layout
+- [ ] `BbToast` is a **sibling** of `.showroom`, not a child
+- [ ] `BbDialog` (and any other modals) are **siblings** of `.showroom`, not children
+- [ ] `.showroom` grid has exactly **2 direct children**: `<aside>` and `<main>`
+- [ ] `grid-template-columns: 200px 1fr` — sidebar is the **first** column (left), main is the **second** (right)
+
+### API correctness
+- [ ] `BbBadge` uses `content` prop, not `text`; `color` prop, not `theme`
+- [ ] `BbChip` uses `clearable` prop and `@click:clear` event
+- [ ] `BbAccordion` is a single collapsible, not a list — 3 separate instances with individual `v-model`
+- [ ] `BbPagination` uses `total-pages` prop
+- [ ] `BbBreadcrumbs` items have `key` and `text` fields
+- [ ] `useToast().toast(...)` — method is `toast()`, not `notify()` or `push()`
+
+### CSS — most common cause of broken components
+- [ ] `import 'bitboss-ui/styles.css'` is present in `app.js` (or equivalent JS entry point). **This is the single most important check.** Without it, ALL bitboss-ui components render unstyled: buttons appear as plain text, inputs show huge unsized icons, `sr-only` text leaks visibly. The import path is `bitboss-ui/styles.css` (not `bitboss-ui/dist/index.css` — the `exports` field in package.json only exposes the `./styles.css` key). Do NOT add this import in the CSS entry (e.g. `app.css`) when using Tailwind CSS v4, because Tailwind's CSS pipeline does not resolve `exports` conditions correctly. Import it in the JS entry instead.
+
+### Inertia setup
+- [ ] `app.js` registers `Link` from `@inertiajs/vue3` as a global component: `.component('Link', Link)`
+- [ ] `useBbConfig().setConfig({ inertiaLinkName: 'Link' })` is called before `createInertiaApp`
+
+---
+
+## Step 8 — Verify
 
 After generating all files:
 
 1. Run `vendor/bin/sail npm run build` (or the project's equivalent build command) to confirm no compilation errors.
-2. Instruct the user to open `/showroom` (or the equivalent route) and verify the page renders correctly.
+2. Instruct the user to open `/showroom` and do a hard refresh (`Cmd+Shift+R`).
 3. Use `browser-logs` to check for any runtime errors.
+4. Confirm visually: sidebar on the **left** at ~200px, main content filling the rest on the **right**.

@@ -45,29 +45,35 @@ The document must include:
 # Theme Definition
 
 ## App Context
+
 [app type and intended audience]
 
 ## Mood
+
 [3 words + 1-2 sentence interpretation]
 
 ## Color System
+
 - Primary: [hex]
 - Surface: [derived neutral]
 - Semantic: success / error / warning / info (derive from primary if not specified)
 - Mode: light / dark / both
 
 ## Typography
+
 - Font family: [name or system stack]
 - Scale: compact / default / large
 - Heading weights: [e.g. 600, 700]
 - Body weight: [e.g. 400]
 
 ## Shape & Spacing
+
 - Border radius base: [e.g. 4px / 8px / 9999px]
 - Spacing unit: [e.g. 4px]
 - Density: compact / default / spacious
 
 ## CSS Custom Properties (tokens)
+
 [List all --bb-* tokens derived from the above, e.g.]
 --bb-color-primary: #...;
 --bb-color-surface: #...;
@@ -76,6 +82,8 @@ The document must include:
 --bb-font-family-heading: ...;
 --bb-font-family-body: ...;
 ```
+
+> **Note:** The document should be written in English.
 
 ---
 
@@ -97,17 +105,17 @@ Using the theme document and the `frontend-design` skill, generate the following
 
 ### Files to create
 
-| File | Purpose |
-|------|---------|
-| `resources/css/tokens.css` | All CSS custom properties (--bb-* tokens) derived from the theme |
-| `resources/css/typography.css` | Font imports, heading/body styles, type scale |
-| `resources/css/layout.css` | Grid, container, breakpoints, spacing utilities |
-| `resources/css/components/buttons.css` | BbButton overrides |
-| `resources/css/components/inputs.css` | BbTextInput, BbTextarea, BbSelect, BbNumberInput overrides |
-| `resources/css/components/feedback.css` | BbAlert, BbBadge, BbChip, BbToast, BbProgress overrides |
-| `resources/css/components/navigation.css` | BbTab, BbAccordion, BbBreadcrumbs, BbPagination overrides |
-| `resources/css/components/overlays.css` | BbDialog, BbDropdown, BbPopover, BbTooltip overrides |
-| `resources/css/components/data-display.css` | BbTable, BbAvatar, BbIcon overrides |
+| File                                        | Purpose                                                           |
+| ------------------------------------------- | ----------------------------------------------------------------- |
+| `resources/css/tokens.css`                  | All CSS custom properties (--bb-\* tokens) derived from the theme |
+| `resources/css/typography.css`              | Font imports, heading/body styles, type scale                     |
+| `resources/css/layout.css`                  | Grid, container, breakpoints, spacing utilities                   |
+| `resources/css/components/buttons.css`      | BbButton overrides                                                |
+| `resources/css/components/inputs.css`       | BbTextInput, BbTextarea, BbSelect, BbNumberInput overrides        |
+| `resources/css/components/feedback.css`     | BbAlert, BbBadge, BbChip, BbToast, BbProgress overrides           |
+| `resources/css/components/navigation.css`   | BbTab, BbAccordion, BbBreadcrumbs, BbPagination overrides         |
+| `resources/css/components/overlays.css`     | BbDialog, BbDropdown, BbPopover, BbTooltip overrides              |
+| `resources/css/components/data-display.css` | BbTable, BbAvatar, BbIcon overrides                               |
 
 ### Rules for CSS generation
 
